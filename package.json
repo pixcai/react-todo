@@ -1,0 +1,32 @@
+{
+  "name": "react-todo",
+  "version": "1.0.0",
+  "description": "A todo demo written in React 16.3.0+",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "roadhog dev",
+    "start": "roadhog start",
+    "test": "roadhog test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixcai/react-todo.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "pixcai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixcai/react-todo/issues"
+  },
+  "homepage": "https://github.com/pixcai/react-todo#readme",
+  "devDependencies": {
+    "roadhog": "^2.2.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.0-alpha.1",
+    "react-dom": "^16.3.0-alpha.1"
+  }
+}
