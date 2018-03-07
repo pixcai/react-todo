@@ -72,11 +72,18 @@ export default class List extends React.Component {
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
-    if (nextProps.theme === prevState.theme) {
+    const state = {
+      theme: nextProps.theme
+    }
+
+    if (prevState.items.length === 0) {
+      state.items = nextProps.defaultValue.map(item => List.newItem(item))
+    }
+    else if (nextProps.theme === prevState.theme) {
       return null
     }
 
-    return { theme: nextProps.theme }
+    return state
   }
 
   render () {
@@ -90,9 +97,9 @@ export default class List extends React.Component {
         </div>
         <ul>
           <Context.Consumer>
-            {ctx => items.map(item => (
+            {ctx => items.map((item, key) => (
               <Item
-                key={item.createAt.toJSON()}
+                key={key}
                 data={item}
                 style={ctx.themes[theme]}
                 onChange={this.props.finishedChange}

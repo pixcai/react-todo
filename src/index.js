@@ -25,6 +25,15 @@ class Todo extends React.Component {
     finished: this.state.finished + value
   })
 
+  componentDidMount () {
+    fetch('/api/todos').then(res => res.json()).then((data) => {
+      this.setState({
+        todos: data,
+        total: data.length
+      })
+    })
+  }
+
   render () {
     const { todos, total, finished, theme } = this.state
     const listProps = {
